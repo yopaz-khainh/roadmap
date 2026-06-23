@@ -5,9 +5,17 @@
 - Internet không phải là một website, mà là hạ tầng kết nối để các dịch vụ online hoạt động.
 - Ví dụ: khi mình vào Google, Facebook, YouTube thì đều đang sử dụng Internet.
 
+### Đặc điểm của Internet:
+
+- **Phạm vi toàn cầu:** Internet kết nối hàng tỷ thiết bị trên khắp thế giới, cho phép người dùng truy cập thông tin ở mọi nơi.
+- **Khả năng chia sẻ thông tin nhanh:** Dữ liệu có thể được truyền tải chỉ trong vài giây thông qua hệ thống mạng toàn cầu.
+- **Hoạt động liên tục:** Internet hoạt động 24/7 và cho phép người dùng truy cập dịch vụ bất cứ lúc nào.
+- **Hỗ trợ nhiều dịch vụ:** Internet cung cấp nhiều dịch vụ như email, website, mạng xã hội, thương mại điện tử và điện toán đám mây.
+- **Khả năng mở rộng cao:** Hệ thống Internet có thể dễ dàng mở rộng khi số lượng người dùng và thiết bị tăng lên.
+
 ## 2. HTTP
 
-- HTTP là viết tắt của HyperText Transfer Protocol.
+- HTTP là viết tắt của HyperText Transfer Protocol - Giao thức Truyền tải Siêu Văn bản.
 - Đây là giao thức dùng để truyền dữ liệu giữa trình duyệt và server.
 - Khi người dùng nhập địa chỉ website, browser sẽ gửi request đến server thông qua HTTP/HTTPS.
 - Server xử lý và trả về response, thường là HTML, CSS, JavaScript, hình ảnh, JSON...
@@ -25,16 +33,21 @@
 
 ## 4. Hosting
 
-- Hosting là nơi lưu trữ dữ liệu của website.
-- Các file như source code, hình ảnh, video, database có thể được đặt trên hosting/server.
-- Khi người dùng truy cập website, dữ liệu sẽ được lấy từ hosting và trả về trình duyệt.
-- Có nhiều loại hosting như shared hosting, VPS, cloud hosting, dedicated server.
-- Với web nhỏ có thể dùng shared hosting, còn web lớn thường dùng VPS hoặc cloud server.
-- Ví dụ: deploy một website Laravel lên VPS thì VPS đó đóng vai trò là nơi hosting website.
+- Hosting là dịch vụ cung cấp không gian lưu trữ và tài nguyên để lưu trữ các dữ liệu của website trên máy chủ. Khi một người truy cập vào website, các tập tin và dữ liệu đó được truyền từ máy chủ đến trình duyệt của người dùng thông qua mạng internet.
+
+### Những tính năng của Hosting:
+
+- **Lưu trữ tập tin:** Hosting cung cấp không gian lưu trữ để lưu trữ các tập tin và dữ liệu của website, bao gồm tập tin HTML, CSS, JavaScript, hình ảnh và video.
+- **Cơ sở dữ liệu:** Hosting hỗ trợ cho các hệ quản trị cơ sở dữ liệu như MySQL hoặc PostgreSQL để lưu trữ và quản lý dữ liệu động của website, chẳng hạn như thông tin người dùng, bài viết, sản phẩm,...
+- **Tên miền và DNS:** Hosting cho phép bạn đăng ký và quản lý tên miền của website, đồng thời cung cấp quyền truy cập vào các bản ghi DNS để điều hướng lưu lượng truy cập đến địa chỉ IP của máy chủ hosting.
+- **Email:** Nhiều dịch vụ hosting cung cấp tính năng email, cho phép bạn tạo và quản lý địa chỉ email dựa trên tên miền của bạn, ví dụ: contact@yourdomain.com.
+- **Bảo mật và chứng chỉ SSL:** Các phương thức bảo mật như chứng chỉ SSL (Secure Socket Layer) để mã hóa kết nối và bảo vệ thông tin truyền qua website. Hay cung cấp các công cụ để quản lý quyền truy cập và bảo vệ website khỏi các cuộc tấn công mạng.
+- **Quản lý tập tin và FTP:** Hosting cung cấp giao diện quản lý tập tin để bạn có thể tải lên, tải xuống và quản lý các tập tin của website. Ngoài ra, FTP (File Transfer Protocol) cho phép bạn truy cập và quản lý tập tin từ xa thông qua các ứng dụng FTP.
+- **Sao lưu và khôi phục:** Dịch vụ hosting thường cung cấp khả năng sao lưu dữ liệu và khôi phục để bảo vệ dữ liệu quan trọng của bạn. Điều này đảm bảo rằng bạn có thể khôi phục lại dữ liệu trong trường hợp xảy ra sự cố hoặc mất dữ liệu.
 
 ## 5. DNS
 
-- DNS là viết tắt của Domain Name System.
+- DNS là viết tắt của Domain Name System - Hệ thống phân giải tên miền trên Internet.
 - DNS có nhiệm vụ chuyển đổi domain name thành địa chỉ IP.
 - Máy tính không hiểu trực tiếp tên miền như `google.com`, mà cần biết IP của server.
 - Khi nhập domain vào browser, DNS sẽ tìm IP tương ứng rồi browser mới kết nối đến server.
@@ -52,21 +65,10 @@
 
 ## 7. Luồng hoạt động cơ bản khi truy cập website
 
-- Người dùng nhập domain vào browser.
-- Browser kiểm tra cache/DNS để tìm địa chỉ IP của domain.
-- DNS trả về IP của server tương ứng.
-- Browser gửi request HTTP/HTTPS đến server.
-- Server xử lý request và trả về response.
-- Browser nhận HTML, CSS, JavaScript, hình ảnh...
-- Browser render dữ liệu đó thành giao diện website cho người dùng xem.
-
-## 8. Mối liên hệ giữa các khái niệm
-
-- Internet là môi trường kết nối các thiết bị.
-- Browser là công cụ để người dùng truy cập website.
-- Domain Name là địa chỉ dễ nhớ của website.
-- DNS chuyển domain thành IP để tìm đúng server.
-- Hosting là nơi chứa website.
-- HTTP/HTTPS là giao thức truyền dữ liệu giữa browser và server.
-
-Tóm lại, khi truy cập một website thì các thành phần này phối hợp với nhau. Người dùng dùng browser nhập domain, DNS tìm IP, browser gửi request qua HTTP/HTTPS đến hosting/server, sau đó server trả dữ liệu về để browser hiển thị website.
+1. Người dùng nhập domain vào browser.
+2. Browser kiểm tra cache/DNS để tìm địa chỉ IP của domain.
+3. DNS trả về IP của server tương ứng.
+4. Browser gửi request HTTP/HTTPS đến server.
+5. Server xử lý request và trả về response.
+6. Browser nhận HTML, CSS, JavaScript, hình ảnh...
+7. Browser render dữ liệu đó thành giao diện website cho người dùng xem.

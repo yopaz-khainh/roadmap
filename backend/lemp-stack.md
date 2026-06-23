@@ -166,33 +166,31 @@ Nginx được sử dụng rất phổ biến vì:
 
 ## 4. Nginx khác gì Apache?
 
-### Apache
+Nginx và Apache đều là web server mã nguồn mở. Điểm khác biệt chính nằm ở cách xử lý kết nối và quản lý cấu hình.
 
-Ưu điểm:
+### So sánh
 
-- Ra đời sớm.
-- Tài liệu phong phú.
-- Hỗ trợ .htaccess.
+| Tiêu chí | Apache | Nginx |
+| --- | --- | --- |
+| Kiến trúc | Sử dụng MPM như `prefork`, `worker` hoặc `event`. | Sử dụng mô hình event-driven, bất đồng bộ. |
+| Kết nối đồng thời | Phụ thuộc vào MPM; `event MPM` xử lý đồng thời tốt hơn `prefork`. | Quản lý nhiều kết nối đồng thời hiệu quả và thường dùng ít tài nguyên. |
+| PHP | Có thể dùng `mod_php` hoặc PHP-FPM. | Chuyển request PHP đến PHP-FPM qua FastCGI. |
+| Cấu hình | Hỗ trợ `.htaccess`, phù hợp shared hosting. | Không hỗ trợ `.htaccess`; cấu hình được quản lý tập trung. |
+| Phù hợp | WordPress, cPanel hoặc ứng dụng phụ thuộc `.htaccess`. | Laravel, Node.js, reverse proxy và hệ thống có nhiều kết nối. |
 
-Nhược điểm:
+### Ưu và nhược điểm
 
-- Tiêu tốn nhiều RAM hơn.
-- Hiệu năng thấp hơn khi có nhiều kết nối đồng thời.
+**Apache:**
 
-### Nginx
+- Ưu điểm: lâu đời, nhiều module, tài liệu phong phú và hỗ trợ `.htaccess`.
+- Nhược điểm: `prefork MPM` có thể sử dụng nhiều RAM khi có nhiều kết nối.
 
-Ưu điểm:
+**Nginx:**
 
-- Hiệu năng cao.
-- Sử dụng ít tài nguyên.
-- Xử lý concurrent connection tốt.
+- Ưu điểm: phục vụ file tĩnh, reverse proxy và xử lý nhiều kết nối hiệu quả.
+- Nhược điểm: không hỗ trợ `.htaccess` và cần reload sau khi sửa cấu hình.
 
-Nhược điểm:
-
-- Không hỗ trợ .htaccess.
-- Cấu hình ban đầu khó làm quen hơn Apache.
-
-Hiện nay đa số hệ thống Laravel, NodeJS và các hệ thống có lượng truy cập lớn thường sử dụng Nginx.
+Không thể kết luận web server nào luôn nhanh hơn. Hiệu năng còn phụ thuộc vào cấu hình và loại ứng dụng. Với LEMP Stack, Laravel thường sử dụng Nginx kết hợp PHP-FPM; Apache vẫn là lựa chọn phù hợp nếu ứng dụng cần `.htaccess`.
 
 ---
 
@@ -230,7 +228,7 @@ HTTP/2 cho phép tải đồng thời hiệu quả hơn HTTP/1.1 nên website th
 
 ## 6. VPS là gì?
 
-VPS (Virtual Private Server) là máy chủ ảo được tạo ra từ một máy chủ vật lý.
+VPS (Virtual Private Server) là máy chủ riêng tư ảo được tạo ra từ một máy chủ vật lý.
 
 Mỗi VPS có:
 
@@ -262,27 +260,34 @@ Có thể chia thành:
 
 Ưu điểm:
 
-- Chi phí thấp.
-- Dễ mở rộng.
-- Tạo nhanh trong vài phút.
+- Chi phí thấp hơn server vật lý.
+- Dễ dàng nâng cấp CPU, RAM, Storage.
+- Có thể khởi tạo trong vài phút.
+- Có quyền quản trị (root/sudo) như một máy chủ riêng.
+- Phù hợp với website, API, ứng dụng vừa và nhỏ.
 
 Nhược điểm:
 
-- Chia sẻ tài nguyên với VPS khác.
-- Hiệu năng không ổn định bằng server vật lý.
+- Tài nguyên vật lý vẫn được chia sẻ với các VPS khác trên cùng máy chủ vật lý.
+- Hiệu năng có thể bị ảnh hưởng nếu nhà cung cấp oversell tài nguyên.
+- Không ổn định bằng Server vật lý trong các workload nặng.
+- Khả năng chịu tải thường thấp hơn server vật lý cùng cấu hình.
 
 ### Server vật lý (Dedicated Server)
 
 Ưu điểm:
 
-- Toàn bộ tài nguyên thuộc về một khách hàng.
-- Hiệu năng cao.
-- Phù hợp hệ thống lớn.
+- Toàn bộ CPU, RAM, ổ cứng thuộc riêng một khách hàng, không phải chia sẻ với người khác.
+- Hiệu năng ổn định và cao.
+- Toàn quyền cấu hình phần cứng, hệ điều hành và mạng.
+- Phù hợp với hệ thống lớn, yêu cầu hiệu năng cao hoặc cần tính bảo mật riêng biệt.
 
 Nhược điểm:
 
-- Chi phí cao.
-- Nâng cấp phần cứng khó hơn.
+- Chi phí đầu tư và vận hành cao.
+- Khó mở rộng hoặc nâng cấp nhanh như Cloud/VPS (thường phải nâng cấp phần cứng hoặc đổi server).
+- Cần tự quản trị, bảo trì phần cứng và hệ điều hành.
+- Nếu phần cứng gặp sự cố có thể gây downtime, việc thay thế thường lâu hơn.
 
 ---
 
