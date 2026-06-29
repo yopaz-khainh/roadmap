@@ -12,7 +12,6 @@
 - `git commit -m "message"`: dùng để lưu lại thay đổi vào lịch sử Git.
 - `git log --oneline`: dùng để xem lịch sử commit ở dạng ngắn gọn, mỗi commit hiển thị trên một dòng.
 - `git push origin branch-name`: dùng để đẩy branch hoặc commit từ local lên remote.
-- `git merge branch-name`: dùng để gộp code từ branch khác vào branch hiện tại.
 - `git cherry-pick commit-id`: dùng để lấy một commit cụ thể từ branch khác sang branch hiện tại.
 - `git stash`: dùng để lưu tạm code đang làm khi chưa muốn commit nhưng cần chuyển branch.
 
@@ -44,7 +43,6 @@ git checkout -b bugfix/fix-login-error
 
 ```bash
 git status
-git diff
 ```
 
 7. Nếu thay đổi đúng, em add file và commit:
@@ -65,13 +63,6 @@ git push origin feature/login
 10. Reviewer sẽ review code. Nếu có comment thì em sửa lại, commit và push tiếp lên branch đó. Khi code được approve, không còn conflict và test pass thì branch sẽ được merge vào `develop`.
 
 11. Khi cần đưa chức năng lên môi trường test, team sẽ merge branch `develop` lên branch `staging`.
-
-```bash
-git checkout staging
-git pull origin staging
-git merge develop
-git push origin staging
-```
 
 12. Sau khi code được deploy từ `staging`, tester hoặc khách hàng sẽ test trên môi trường staging. Nếu phát hiện bug thì team sẽ tạo branch `bugfix/*` từ `develop`, sửa lỗi, merge lại vào `develop`, rồi merge tiếp từ `develop` lên `staging` để test lại.
 
